@@ -13,7 +13,7 @@
         "start": "functions-framework --target=checkSpannerScaleMetricsHTTP",
         "debug": "node --inspect node_modules/@google-cloud/functions-framework --target=checkSpannerScaleMetricsHTTP",
         "test": "mocha --recursive",
-        "mdlint": "cd .. && markdownlint '**/*.md' --config .mdl.json --ignore '**/node_modules/**' --ignore 'code-of-conduct.md'"        
+        "mdlint": "cd .. && markdownlint '**/*.md' --config .mdl.json --ignore '**/node_modules/**' --ignore 'code-of-conduct.md'"
     },
     "devDependencies": {
         "markdownlint": "^0.22.0",

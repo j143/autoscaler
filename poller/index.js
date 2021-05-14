@@ -34,7 +34,9 @@ const spannerDefaults = {
   overloadStepSize: 5,
   scaleOutCoolingMinutes: 5,
   scaleInCoolingMinutes: 30,
-  scalingMethod: 'STEPWISE'
+  scalingMethod: 'STEPWISE',
+  regional_margin: 5,
+  multi_regional_margin: 5
 };
 const metricDefaults = {
   period: 60,
