@@ -34,16 +34,16 @@ const spannerDefaults = {
   overloadStepSize: 5,
   scaleOutCoolingMinutes: 5,
   scaleInCoolingMinutes: 30,
-  scalingMethod: 'STEPWISE',
-  regional_margin: 5,
-  multi_regional_margin: 5
+  scalingMethod: 'STEPWISE'
 };
 const metricDefaults = {
   period: 60,
   aligner: 'ALIGN_MAX',
-  reducer: 'REDUCE_SUM'
+  reducer: 'REDUCE_SUM',
+  regional_margin: 5,
+  multi_regional_margin: 5
 }
-const DEFAULT_THRESHOLD_MARGIN = 5;
+//const DEFAULT_THRESHOLD_MARGIN = 5;
 
 function log(message, severity = 'DEBUG', payload) {
   // Structured logging
@@ -267,13 +267,9 @@ async function getMetrics(spanner) {
     var margin;
     if (spanner.regional) {
       threshold = metric.regional_threshold;
-      if (!metric.hasOwnProperty('regional_margin')) 
-        metric.regional_margin = DEFAULT_THRESHOLD_MARGIN;
       margin = metric.regional_margin;
     } else {
       threshold = metric.multi_regional_threshold;
-      if (!metric.hasOwnProperty('multi_regional_margin')) 
-        metric.multi_regional_margin = DEFAULT_THRESHOLD_MARGIN;
       margin = metric.multi_regional_margin;
     }
 
